@@ -12,7 +12,7 @@ Python >= 3.5
 
 ## Chamando a biblioteca
 
-**import pypayments as payments**
+**from pypayments import***
 
 ## Passando os parâmetro de conexão
 
@@ -55,10 +55,12 @@ novo = payment.send(type_payment='boleto',<br />
                     payment_code='69123970504',<br />
                     currency='BRL',<br />
                     total=1200)<br />
-</p>
-* `print (novo)`
 
-* `O retorno será um dicionário:`
+print (novo)
+
+</p>
+
+O retorno será um dicionário:
 
 * `{
   'payment': {
