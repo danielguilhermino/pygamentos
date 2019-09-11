@@ -8,17 +8,17 @@ Python >= 3.5
 
 ## Para instalar
 
-Para instalar: 
-
 **pip install pypayments**
 
-## Funções
-
-Para iniciar os testes, precisamos passar a chave disponibilizada pelo serviço e informar que será utilizado **sandox** para testes.
+## Chamando a biblioteca
 
 **import pypayments as payments**
 
-* `Conn = start(key=key,mode=mode)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode.
+## Passando os parâmetro de conexão
+
+* `Conn = start(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode! O gateway é dispensável neste momento, pois apenas o serviço da Ebanx está disponível.
+
+## Funções disponíveis
 
 * `send()` - Recebe os dados para solicitar o pagamento.
 
@@ -30,4 +30,62 @@ Para iniciar os testes, precisamos passar a chave disponibilizada pelo serviço 
 
 * `cancel()` - Recebe os dados para solicitar o cancelamento de um cancelamento.
 
-Logo abaixo, vamos explicar como utilizar cada função.
+## Exemplos
+
+* `from pypayments import`
+
+* `key = "xyz"`
+
+* `payment = start(key=key,mode=1,gateway='Ebanx')``
+
+* `novo = payment.send(type_payment='boleto',
+                    name='João da Couves', 
+                    document='27.078.779/0001-14',
+                    email='jonhofcouves@gmail.com', 
+                    address='Rua João um', 
+                    number='900', 
+                    phone='999998888',
+                    city='Rio de Janeiro',
+                    state='RJ',
+                    country='br',
+                    zipcode='20000-111',
+                    payment_code='69123970504',
+                    currency='BRL',
+                    total=1200)`
+
+* `print (novo)`
+
+* `O retorno será um dicionário:`
+
+* `{
+  'payment': {
+    'hash': '5d78739aa5d43d1fe5590503088bd022153b133170e8ad61',
+    'pin': '351416861',
+    'country': 'br',
+    'merchant_payment_code': '69123900504',
+    'order_number': None,
+    'status': 'PE',
+    'status_date': None,
+    'open_date': '2019-09-11 04:10:02',
+    'confirm_date': None,
+    'transfer_date': None,
+    'amount_br': '1200.00',
+    'amount_ext': '1200.00',
+    'amount_iof': '0.00',
+    'currency_rate': '1.0000',
+    'currency_ext': 'BRL',
+    'due_date': '2019-09-14',
+    'instalments': '1',
+    'payment_type_code': 'boleto',
+    'boleto_url': 'https://staging-print.ebanx.com.br/print/?hash=5d78739aa5d43d1fe5590503088bd022153b133170e8ad61',
+    'boleto_barcode': '34191760070014759372714245740007880120000120000',
+    'boleto_barcode_raw': '34198801200001200001760000147593721424574000',
+    'pre_approved': False,
+    'capture_available': None
+  },
+  'status': 'SUCCESS'
+}`
+
+Se você precisar acessar o link do boleto gerado, basta capturar: novo['payment']['boleto_url']
+
+O resultado será: https://staging-print.ebanx.com.br/print/?hash=5d78739aa5d43d1fe5590503088bd022153b133170e8ad61
