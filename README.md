@@ -6,13 +6,18 @@
 
 Python >= 3.5
 
+## Dependências
+
+*`Biblioteca requests`
+pip install requests
+
 ## Para instalar
 
 **pip install pypayments**
 
 ## Chamando a biblioteca
 
-´*from pypayments import *´
+`*from pypayments import *`
 
 ## Passando os parâmetro de conexão
 
