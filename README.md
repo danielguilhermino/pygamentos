@@ -16,7 +16,7 @@ Python >= 3.5
 
 ## Passando os parâmetro de conexão
 
-* `Conn = start(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode! O gateway é dispensável neste momento, pois apenas o serviço da Ebanx está disponível.
+* `payment = start(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode! O gateway é dispensável neste momento, pois apenas o serviço da Ebanx está disponível.
 
 ## Funções disponíveis
 
@@ -36,23 +36,24 @@ Python >= 3.5
 
 * `key = "xyz"`
 
-* `payment = start(key=key,mode=1,gateway='Ebanx')``
+* `payment = start(key=key,mode=1,gateway='Ebanx')`
 
-* `novo = payment.send(type_payment='boleto',
-                    name='João da Couves', 
-                    document='27.078.779/0001-14',
-                    email='jonhofcouves@gmail.com', 
-                    address='Rua João um', 
-                    number='900', 
-                    phone='999998888',
-                    city='Rio de Janeiro',
-                    state='RJ',
-                    country='br',
-                    zipcode='20000-111',
-                    payment_code='69123970504',
-                    currency='BRL',
-                    total=1200)`
-
+<p>
+* `novo = payment.send(type_payment='boleto',<br />
+                    name='João da Couves', <br />
+                    document='27.078.779/0001-14',<br />
+                    email='jonhofcouves@gmail.com', <br />
+                    address='Rua João um', <br />
+                    number='900', <br />
+                    phone='999998888',<br />
+                    city='Rio de Janeiro',<br />
+                    state='RJ',<br />
+                    country='br',<br />
+                    zipcode='20000-111',<br />
+                    payment_code='69123970504',<br />
+                    currency='BRL',<br />
+                    total=1200)`<br />
+</p>
 * `print (novo)`
 
 * `O retorno será um dicionário:`
