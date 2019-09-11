@@ -28,7 +28,7 @@ Python >= 3.5
 
 * `cancel_refund()` - Recebe os dados para solicitar o cancelamento de um reembolso.
 
-* `cancel()` - Recebe os dados para solicitar o cancelamento de um cancelamento.
+* `cancel()` - Recebe os dados para solicitar o cancelamento de um pagamento.
 
 ## Exemplos
 
