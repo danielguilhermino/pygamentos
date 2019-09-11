@@ -99,3 +99,9 @@ O retorno será um dicionário:
 Se você precisar acessar o link do boleto gerado, basta capturar: novo['payment']['boleto_url']
 
 O resultado será: https://staging-print.ebanx.com.br/print/?hash=5d78739aa5d43d1fe5590503088bd022153b133170e8ad61
+
+
+## Agradecimentos
+
+* `Carlos Costa` - Mr.Web2py Brasil por todo o suporte e mentoria!
+* `Grupo Web2py Brasil` - Somos poucos, porém apaixonados pelo que fazemos e um grupo acolhedor! 
