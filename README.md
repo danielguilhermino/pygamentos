@@ -38,8 +38,10 @@ Python >= 3.5
 
 * `payment = start(key=key,mode=1,gateway='Ebanx')`
 
+
+
 <p>
-* `novo = payment.send(type_payment='boleto',<br />
+novo = payment.send(type_payment='boleto',<br />
                     name='João da Couves', <br />
                     document='27.078.779/0001-14',<br />
                     email='jonhofcouves@gmail.com', <br />
@@ -52,7 +54,7 @@ Python >= 3.5
                     zipcode='20000-111',<br />
                     payment_code='69123970504',<br />
                     currency='BRL',<br />
-                    total=1200)`<br />
+                    total=1200)<br />
 </p>
 * `print (novo)`
 
