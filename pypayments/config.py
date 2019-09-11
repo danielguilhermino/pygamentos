@@ -4,7 +4,7 @@ from .request_payment import *
 from .request_refund import *
 from .cancel_payment import *
 
-class start:
+class Config:
     def __init__(self, key, mode, gateway):
         self.key = key
         self.modo = mode

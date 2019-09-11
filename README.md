@@ -12,11 +12,11 @@ Python >= 3.5
 
 ## Chamando a biblioteca
 
-**from pypayments import***
+´*from pypayments import *´
 
 ## Passando os parâmetro de conexão
 
-* `payment = start(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode! O gateway é dispensável neste momento, pois apenas o serviço da Ebanx está disponível.
+* `payment = Config(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode! O gateway é dispensável neste momento, pois apenas o serviço da Ebanx está disponível.
 
 ## Funções disponíveis
 
@@ -32,11 +32,11 @@ Python >= 3.5
 
 ## Exemplos
 
-* `from pypayments import`
+* `from pypayments import *`
 
 * `key = "xyz"`
 
-* `payment = start(key=key,mode=1,gateway='Ebanx')`
+* `payment = Config(key=key,mode=1,gateway='Ebanx')`
 
 
 
