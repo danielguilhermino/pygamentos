@@ -48,7 +48,7 @@ pip install requests
 <p>
 novo = payment.send(type_payment='boleto',<br />
                     name='João da Couves', <br />
-                    document='27.078.779/0001-14',<br />
+                    document='123.456.789-00',<br />
                     email='jonhofcouves@gmail.com', <br />
                     address='Rua João um', <br />
                     number='900', <br />
