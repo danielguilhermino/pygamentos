@@ -39,8 +39,8 @@ def new_payment(**kwargs):
 
     ## Check if payment is creditcard!
     if kwargs.get('type_payment') == 'credicard':
-        item['payment']['payment_type_code'] = 'creditcard'
-        item['payment']['instalments'] = 1
+        item['payment']['payment_type_code'] = kwargs.get('card_type')
+        item['payment']['instalments'] = kwargs.get('instalments') if kwargs.get('instalments') else 1
         item['payment']['creditcard'] = {}
         item['payment']['creditcard']['card_number'] = kwargs.get('card_number')
         item['payment']['creditcard']['card_name'] = kwargs.get('card_name')
