@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: pypayments
-Version: 0.2.2
+Version: 0.2.3
 Summary: Unofficial library for make payments in Python
 Home-page: https://github.com/hubtec/pypayments
 Author: Daniel Guilhermino

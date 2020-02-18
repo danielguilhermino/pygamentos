@@ -38,7 +38,7 @@ def new_payment(**kwargs):
         
 
     ## Check if payment is creditcard!
-    if kwargs.get('type_payment') == 'credicard':
+    if kwargs.get('type_payment') == '_credicard':
         item['payment']['customer_ip'] = kwargs.get('ip') if kwargs.get('ip') else None
         item['payment']['create_token'] = kwargs.get('create_token') if kwargs.get('create_token') else False
         if kwargs.get('token'):
