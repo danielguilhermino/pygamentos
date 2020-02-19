@@ -2,6 +2,8 @@ LICENSE.txt
 README.md
 setup.cfg
 setup.py
+docs/README.rst
+docs/index.rst
 pypayments/__init__.py
 pypayments/cancel_payment.py
 pypayments/config.py
