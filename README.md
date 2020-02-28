@@ -21,7 +21,7 @@ pip install requests
 
 ## Chamando a biblioteca
 
-**`from pypayments import *`**
+**from pypayments import* **
 
 ## Passando os parâmetro de conexão
 
@@ -47,7 +47,7 @@ pip install requests
 
 * `payment = Config(key=key,mode=1,gateway='Ebanx')`
 
-** Gerando um Boleto **
+**Gerando um Boleto**
 
 <p>
 novo = payment.send(type_payment='boleto',<br />
