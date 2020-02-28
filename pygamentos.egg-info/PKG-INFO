@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pygamentos
+Version: 0.2.9
+Summary: Unofficial library for make payments in Python
+Home-page: https://github.com/hubtec/pygamentos
+Author: Daniel Guilhermino
+Author-email: daniel@hubtec.com.br
+License: MIT
+Description: UNKNOWN
+Keywords: ebanx,payments,gateway,pagamentos
+Platform: UNKNOWN
