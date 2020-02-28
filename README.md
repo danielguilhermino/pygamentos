@@ -1,6 +1,6 @@
-# pypayments
+# pygamentos
 
-**pypayments** é uma biblioteca idealizada para facilitar a utilização dos principais meios de pagamentos online em Python 3, neste primeiro momento apenas o **Ebanx** está disponível, mas vamos adicionar novos serviços **em breve**.
+**pygamentos** é uma biblioteca idealizada para facilitar a utilização dos principais meios de pagamentos online em Python 3, neste primeiro momento apenas o **Ebanx** está disponível, mas vamos adicionar novos serviços **em breve**.
 
 ## Versão do Python
 
@@ -13,15 +13,15 @@ pip install requests
 
 ## Para instalar
 
-**pip install pypayments**
+**pip install pygamentos**
 
 ## Para fazer o upgrade
 
-**pip install pypayments --upgrade**
+**pip install pygamentos --upgrade**
 
 ## Chamando a biblioteca
 
-**`from pypayments import *`**
+**`from pygamentos import *`**
 
 ## Passando os parâmetro de conexão
 
@@ -41,7 +41,7 @@ pip install requests
 
 ## Exemplos
 
-* `from pypayments import *`
+* `from pygamentos import *`
 
 * `key = "xyz"`
 
