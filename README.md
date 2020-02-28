@@ -21,7 +21,7 @@ pip install requests
 
 ## Chamando a biblioteca
 
-**from pypayments import*
+**`from pypayments import *`**
 
 ## Passando os parâmetro de conexão
 
