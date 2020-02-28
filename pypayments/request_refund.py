@@ -4,13 +4,13 @@ import requests
 import json
 
 
-def refund(**kwargs):
+def new_refund(**kwargs):
 
     item = {
         'integration_key': kwargs.get('key'),
         'merchant_refund_code': kwargs.get('refund_code'),
         'operation': "request",
-        'amount':kwargs.get('total'),
+        'amount':kwargs.get('amount'),
         'hash': kwargs.get('hash'),
         'description': kwargs.get('description')
     }
@@ -28,12 +28,11 @@ def new_refund_or_cancel(**kwargs):
         'integration_key': kwargs.get('key'),
         'merchant_refund_code': kwargs.get('refund_code'),
         'operation': "request",
-        'amount':kwargs.get('total'),
         'hash': kwargs.get('hash'),
         'description': kwargs.get('description')
     }
 
-    send = requests.post(kwargs.get('url')['refund'], data=item)
+    send = requests.post(kwargs.get('url')['refundOrCancel'], data=item)
 
     r = send.json()
 

@@ -9,7 +9,7 @@ requires = [
 setup(
     name='pypayments',
     packages=['pypayments'],  # this must be the same as the name above
-    version='0.2.8',
+    version='0.2.9',
     description='Unofficial library for make payments in Python',
     author='Daniel Guilhermino',
     author_email='daniel@hubtec.com.br',

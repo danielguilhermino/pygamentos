@@ -2,6 +2,10 @@ LICENSE.txt
 README.md
 setup.cfg
 setup.py
+dist/pypayments-0.2.5.tar.gz
+dist/pypayments-0.2.6.tar.gz
+dist/pypayments-0.2.7.tar.gz
+dist/pypayments-0.2.8.tar.gz
 docs/README.rst
 docs/index.rst
 pypayments/__init__.py

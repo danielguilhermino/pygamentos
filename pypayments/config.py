@@ -53,7 +53,7 @@ class Config:
 
     def refund(self,**kwargs):
 
-        new = new_payment(key=self.key,url=self.url,**kwargs)
+        new = new_refund(key=self.key,url=self.url,**kwargs)
 
         return new
 
