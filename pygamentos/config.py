@@ -3,12 +3,13 @@
 from .request_payment import *
 from .request_refund import *
 from .cancel_payment import *
+from .information_payment import *
 
 class Config:
-    def __init__(self, key, mode, gateway):
-        self.key = key
-        self.modo = mode
-        self.gateway = gateway
+    def __init__(self, **kwargs):
+        self.key = kwargs.get('key')
+        self.modo = 0 if not kwargs.get('mode') else kwargs.get('mode')
+        self.gateway = kwargs.get('gateway')
 
         self.url = {
             'direct' : 'https://api.ebanx.com.br/ws/direct',
@@ -41,13 +42,13 @@ class Config:
 
     def send(self,**kwargs):
 
-        new = new_payment(key=self.key,url=self.url,**kwargs)
+        new = new_payment(key=self.key,url=self.url,gateway=self.gateway,**kwargs)
 
         return new
     
     def cancel(self,**kwargs):
 
-        new = cancel_payment(key=self.key,url=self.url,**kwargs)
+        new = cancel_payment(key=self.key,url=self.url,gateway=self.gateway,**kwargs)
 
         return new
 
@@ -66,5 +67,11 @@ class Config:
     def new_cancel_refund(self,**kwargs):
 
         new = new_cancel_refund(key=self.key,url=self.url,**kwargs)
+
+        return new
+
+    def info(self,**kwargs):
+
+        new = info_payment(key=self.key,url=self.url,gateway=self.gateway,**kwargs)
 
         return new
