@@ -1,6 +1,6 @@
 # pygamentos
 
-**pygamentos** é uma biblioteca idealizada para facilitar a utilização dos principais meios de pagamentos online em Python 3, neste primeiro momento apenas o **Ebanx** está disponível, mas vamos adicionar novos serviços **em breve**.
+**pygamentos** é uma biblioteca idealizada para facilitar a utilização dos principais meios de pagamentos online em Python 3, estamos com suporte para os gateways de pagamento **Ebanx** e **PicPay** no momento, mas vamos adicionar novos serviços **em breve**.
 
 ## Versão do Python
 
@@ -25,7 +25,7 @@ pip install requests
 
 ## Passando os parâmetro de conexão
 
-* `payment = Config(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode! O gateway por enquanto utilizamos apenas o serviço da Ebanx.
+* `payment = Config(key=key,mode=mode,gateway=gateway)` - Recebe valor da chave(key) e o modo sandobox(mode=1), se estiver em **produção**, não precisa informar o mode!
 
 ## Funções disponíveis
 
@@ -39,7 +39,7 @@ pip install requests
 
 * `cancel()` - Recebe os dados para solicitar o cancelamento de um pagamento.
 
-## Exemplos
+## Exemplos usando o gateway Ebanx
 
 * `from pygamentos import *`
 
@@ -308,6 +308,62 @@ O retorno será um dicionário:
   'operation': 'refund',
   'status': 'SUCCESS'
 }`
+
+## Exemplos usando o gateway PicPay
+
+**Gerando um pagamento**
+
+key = "xyz"
+payment = Config(key=key,gateway='PicPay')
+
+novo = payment.send(
+			firstname='João',
+			lastname='da Couves',
+			document='886.959.180-84',
+			email='jonhofcouves@gmail.com',
+			phone='999998888',
+			payment_code='6341504',
+			total=1201.55,
+			callback='https://seuite.com.br/callback',
+			return_url='https://seuite.com.br/returnurl',
+			expires='2022-05-01T16:00:00-03:00'
+			)
+
+
+**Resposta da solicitação de pagamento**
+
+{
+  'referenceId': '6OP7804',
+  'paymentUrl': 'URL',
+  'qrcode': {
+    'content': 'URL',
+    'base64': 'data:image/png;base64,código'
+  },
+  'expiresAt': '2022-05-01T16:00:00-03:00'
+}
+
+
+**Checando o estado do pagamento**
+
+key = "xyz"
+payment = Config(key=key,gateway='PicPay')
+
+novo = payment.info(payment_code='6OP7804')
+
+**Resposta da solicitação sobre o estado do pagamento**
+
+{'referenceId': '6OP7804', 'status': 'paid', 'authorizationId': código}
+
+**Cancelando o pagamento (Refund)**
+
+key = "xyz"
+payment = Config(key=key,gateway='PicPay')
+
+novo = payment.cancel(authorization_id=código, payment_code='6OP7804')
+
+**Resposta Cancelamento**
+
+{'referenceId': '6OP7804', 'cancellationId': '5e599e4613c9741f607e7afc'}
 
 ## Agradecimentos
 
